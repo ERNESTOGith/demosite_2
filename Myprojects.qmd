@@ -1,0 +1,128 @@
+---
+title: "My projects"
+---
+
+## 1 Introduction
+
+This chapter will show you how to use visualization and transformation to explore your data in a systematic way, a task that statisticians call exploratory data analysis, or EDA for short. EDA is an iterative cycle. You:
+
+1.  Generate questions about your data.
+
+2.  Search for answers by visualizing, transforming, and modelling your data.
+
+3.  Use what you learn to refine your questions and/or generate new questions.
+
+EDA is not a formal process with a strict set of rules. More than anything, EDA is a state of mind. During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. As your exploration continues, you will home in on a few particularly productive insights that you’ll eventually write up and communicate to others.
+
+EDA is an important part of any data analysis, even if the primary research questions are handed to you on a platter, because you always need to investigate the quality of your data. Data cleaning is just one application of EDA: you ask questions about whether your data meets your expectations or not. To do data cleaning, you’ll need to deploy all the tools of EDA: visualization, transformation, and modelling.
+
+### 1.1 Prerequisites
+
+In this chapter we’ll combine what you’ve learned about dplyr and ggplot2 to interactively ask questions, answer them with data, and then ask new questions.
+
+```{r message=FALSE}
+library(styler)
+library(tidyverse)
+```
+
+## 2. Questions
+
+*“There are no routine statistical questions, only questionable statistical routines.” — Sir David Cox*
+
+*“Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise.” — John Tukey*
+
+Your goal during EDA is to develop an understanding of your data. The easiest way to do this is to use questions as tools to guide your investigation. When you ask a question, the question focuses your attention on a specific part of your dataset and helps you decide which graphs, models, or transformations to make.
+
+EDA is fundamentally a creative process. And like most creative processes, the key to asking *quality* questions is to generate a large *quantity* of questions. It is difficult to ask revealing questions at the start of your analysis because you do not know what insights can be gleaned from your dataset. On the other hand, each new question that you ask will expose you to a new aspect of your data and increase your chance of making a discovery. You can quickly drill down into the most interesting parts of your data—and develop a set of thought-provoking questions—if you follow up each question with a new question based on what you find.
+
+There is no rule about which questions you should ask to guide your research. However, two types of questions will always be useful for making discoveries within your data. You can loosely word these questions as:
+
+1.  What type of variation occurs within my variables?
+
+2.  What type of covariation occurs between my variables?
+
+The rest of this chapter will look at these two questions. We’ll explain what variation and covariation are, and we’ll show you several ways to answer each question.
+
+## 3. Variation
+
+**Variation** is the tendency of the values of a variable to change from measurement to measurement. You can see variation easily in real life; if you measure any continuous variable twice, you will get two different results. This is true even if you measure quantities that are constant, like the speed of light. Each of your measurements will include a small amount of error that varies from measurement to measurement. Variables can also vary if you measure across different subjects (e.g., the eye colors of different people) or at different times (e.g., the energy levels of an electron at different moments). Every variable has its own pattern of variation, which can reveal interesting information about how that it varies between measurements on the same observation as well as across observations. The best way to understand that pattern is to visualize the distribution of the variable’s values, which you’ve learned about in [Chapter 1](https://r4ds.hadley.nz/data-visualize).
+
+We’ll start our exploration by visualizing the distribution of weights (`carat`) of \~54,000 diamonds from the `diamonds` dataset. Since `carat` is a numerical variable, we can use a histogram:
+
+```{r}
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram(binwidth = 0.5)
+```
+
+Now that you can visualize variation, what should you look for in your plots? And what type of follow-up questions should you ask? We’ve put together a list below of the most useful types of information that you will find in your graphs, along with some follow-up questions for each type of information. The key to asking good follow-up questions will be to rely on your curiosity (What do you want to learn more about?) as well as your skepticism (How could this be misleading?).
+
+### 3.1 Typical values
+
+In both bar charts and histograms, tall bars show the common values of a variable, and shorter bars show less-common values. Places that do not have bars reveal values that were not seen in your data. To turn this information into useful questions, look for anything unexpected:
+
+-   Which values are the most common? Why?
+
+-   Which values are rare? Why? Does that match your expectations?
+
+-   Can you see any unusual patterns? What might explain them?
+
+Let’s take a look at the distribution of `carat` for smaller diamonds.
+
+```{r}
+smaller <- diamonds |> 
+  filter(carat < 3)
+ggplot(smaller, aes(x = carat)) +
+  geom_histogram(binwidth = 0.01)
+```
+
+This histogram suggests several interesting questions:
+
+-   Why are there more diamonds at whole carats and common fractions of carats?
+
+-   Why are there more diamonds slightly to the right of each peak than there are slightly to the left of each peak?
+
+Visualizations can also reveal clusters, which suggest that subgroups exist in your data. To understand the subgroups, ask:
+
+-   How are the observations within each subgroup similar to each other?
+
+-   How are the observations in separate clusters different from each other?
+
+-   How can you explain or describe the clusters?
+
+-   Why might the appearance of clusters be misleading?
+
+Some of these questions can be answered with the data while some will require domain expertise about the data. Many of them will prompt you to explore a relationship *between* variables, for example, to see if the values of one variable can explain the behavior of another variable. We’ll get to that shortly.
+
+### 3.2 Unusual values
+
+Outliers are observations that are unusual; data points that don’t seem to fit the pattern. Sometimes outliers are data entry errors, sometimes they are simply values at the extremes that happened to be observed in this data collection, and other times they suggest important new discoveries. When you have a lot of data, outliers are sometimes difficult to see in a histogram. For example, take the distribution of the `y` variable from the diamonds dataset. The only evidence of outliers is the unusually wide limits on the x-axis.
+
+```{r}
+ggplot(diamonds, aes(x = y)) +
+  geom_histogram(binwidth = 0.5)
+```
+
+There are so many observations in the common bins that the rare bins are very short, making it very difficult to see them (although maybe if you stare intently at 0 you’ll spot something). To make it easy to see the unusual values, we need to zoom to small values of the y-axis with [`coord_cartesian()`](https://ggplot2.tidyverse.org/reference/coord_cartesian.html):
+
+```{r} ggplot(diamonds, aes(x = y)) +}
+  geom_histogram(binwidth = 0.5) + 
+  coord_cartesian(ylim = c(0, 50))
+```
+
+[`coord_cartesian()`](https://ggplot2.tidyverse.org/reference/coord_cartesian.html) also has an [`xlim()`](https://ggplot2.tidyverse.org/reference/lims.html) argument for when you need to zoom into the x-axis. ggplot2 also has [`xlim()`](https://ggplot2.tidyverse.org/reference/lims.html) and [`ylim()`](https://ggplot2.tidyverse.org/reference/lims.html) functions that work slightly differently: they throw away the data outside the limits.
+
+This allows us to see that there are three unusual values: 0, \~30, and \~60. We pluck them out with dplyr:
+
+```{r}
+unusual <- diamonds |> 
+  filter(y < 3 | y > 20) |> 
+  select(price, x, y, z) |> 
+  arrange(y) 
+unusual
+```
+
+The `y` variable measures one of the three dimensions of these diamonds, in mm. We know that diamonds can’t have a width of 0mm, so these values must be incorrect. By doing EDA, we have discovered missing data that was coded as 0, which we never would have found by simply searching for `NA`s. Going forward we might choose to re-code these values as `NA`s in order to prevent misleading calculations. We might also suspect that measurements of 32mm and 59mm are implausible: those diamonds are over an inch long, but don’t cost hundreds of thousands of dollars!
+
+It’s good practice to repeat your analysis with and without the outliers. If they have minimal effect on the results, and you can’t figure out why they’re there, it’s reasonable to omit them, and move on. However, if they have a substantial effect on your results, you shouldn’t drop them without justification. You’ll need to figure out what caused them (e.g., a data entry error) and disclose that you removed them in your write-up.
+
+It’s good practice to repeat your analysis with and without the outliers. If they have minimal effect on the results, and you can’t figure out why they’re there, it’s reasonable to omit them, and move on. However, if they have a substantial effect on your results, you shouldn’t drop them without justification. You’ll need to figure out what caused them (e.g., a data entry error) and disclose that you removed them in your write-up.

@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+![My profile photo](photo.jpg){fig-align="center" width="444"}
