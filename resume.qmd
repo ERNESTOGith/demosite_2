@@ -1,0 +1,93 @@
+---
+title: "RESUME"
+---
+
+**Last Name: NTEDE**
+
+**First Name: Ernest**
+
+**Phone: (237) 691 962 255**
+
+**Email: *ntede.enest\@gmail.com***
+
+**Country of Origin: CAMEROON**
+
+# [EDUCATION]{.underline}
+
+**2019-2021**: Master’s degree in Econometrics & Statistics, University of Toulouse(France);
+
+**2011-2014**: Statistician-Economist Engineer diploma in Statistics & Applied Economics, Sub-Regional Institute for Statistics and Applied Economics(Cameroon);
+
+**2008**: Master’s degree in Economics, University of Yaounde II (Cameroon);
+
+**2007**: Bachelor’s degree in Economic Analysis and Policy, University of Yaounde II.
+
+# [TECHNICAL SKILLS]{.underline}
+
+## 1. ECONOMICS
+
+|                               |                                         |
+|-------------------------------|-----------------------------------------|
+| **a**. Microeconomic analysis | **f**. National accounts                |
+| **b**. Macroeconomic analysis | **g**. International Monetary economics |
+| **c**. International economy  | **h**. Public economy                   |
+| **d**. Monetary macroeconomy  | **i**. Long term development planning   |
+| **e**. Dynamic macro          | **g**. The history of economic thought  |
+
+## **2. STATISTICS & ECONOMETRICS**
+
+|  |  |
+|----|----|
+| **a**. Exploratory Multivariate data analysis methods with R (PCA, CA, MCA, Clustering, MFA), *University of Toulouse(France)* | **g**. Geospatial Analysis with R (Areal data, Geostatistical data, Point patterns, Spatio-temporal data, Spatial functional data, Mobility data) using packages sp, sf and terra, *University of Toulouse(France)* |
+| **b**. Econometrics of qualitative variables with R (Logit and Probit models, bivariate models, multinomial models, Tobit model) | **h**. Impact Evaluation using R (Randomization, Propensity Score Matching, Double difference Method, Instrumental Variable Method, Regression Discontinuity and Pipeline Methods) |
+| **c.** Econometric analysis (Gaussian Linear Models with R, Time series with R (Var and VECM) model, Econometrics of qualitative variables with R, Econometrics of panel data, estimation of data envelopment analysis) | **i.** Survey design (Simple Random Sampling without or with replacement, Stratified sampling, clustered sampling, Stratification combined clustered sampling)**,** Analysing survey data |
+| **d**. Supervised learning (Regression, Logistic Regression, Classification, Naïves Bayes Classifiers, Decision Trees, Support Vector Machine), *University of Toulouse(France)* | **j**. R for data science (introduction using R, objects structure, graphics, statistic tests), *University of Toulouse(France)* |
+| **e**. Unsupervised learning (Hierarchical Clustering, K-means clustering, K nearest neighbours(KNN), Principal Component Analysis, Singular Value Decomposition, Independent Component Analysis), *University of Toulouse(France)* | **k**. SQL language (extractions of lines and columns, fusion of tables), *University of Toulouse(France)* |
+| **f**. Big data with R (Big data algorithms, supervised learning, unsupervised learning of big data, Big data with Spark), *University of Toulouse(France)* | **l**. Experience coding by using R in a team environment and using GitHub. This is the link of my GitHub account ***https://github.com/ERNESTOGith***. |
+
+## **3. Computer Science**
+
+|  |
+|----|
+| **a**. Office automation: Advanced Word document with RMarkdown, Excel, Advanced PowerPoint presentation with RMarkdown, Latex document with RMarkdown. |
+| **b**. Open office Softwares of Statistics & econometrics : R(advanced level, **building web applications with Shiny R**), Python(intermediate level), ODK(Open Data Kit), R for SQL. |
+| **c**. Programming languages : Pascal, R(advanced level), Python(intermediate level), SQL, HTML, CSS |
+| **d**. Microsoft teams for remote meetings |
+
+# [**EXPERIENCE**]{.underline}
+
++:-----:+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2023  | The Survey of the Informal Sector with the National Institute of Statistics(NIS) of Cameroon                                                                                                 |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2022  | — Monitoring and evaluation of the Strategy of development of Cameroon, *Ministry of Economy;*                                                                                               |
+|       |                                                                                                                                                                                              |
+|       | — The Survey on Malaria Indicators in Cameroon with NIS;                                                                                                                                     |
+|       |                                                                                                                                                                                              |
+|       | — The Supplementary Survey to the Fourth Cameroonian Household Survey: MONOGRAPHY OF THE CENTRAL REGION with NIS                                                                             |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 20221 | **Master’s topic**: *Impact of training on worker productivity in Camerooon, University of Toulouse(France)*                                                                                 |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2020  | — Determinants analysis of export and import prices of main raw material in Cameroon, Ministry of Economy;                                                                                   |
+|       |                                                                                                                                                                                              |
+|       | — The survey on the availability of contraceptives and vital maternal health products at service delivery points in cameroon final report with NIS;                                          |
+|       |                                                                                                                                                                                              |
+|       | — Public Expenditure Tracking Survey in the areas of Health, Nutrition, Water-Hygiene-Sanitation and Education: Education Component with NIS.                                                |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2019  | Panel Surveys for the Assessment of the Socioeconomic Impact of Covid-19 on the Living Conditions of Households in Cameroon: Third round - Household Component Policy guidance note with NIS |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2018  | The fifth Cameroon Demographic and Health Survey with NIS                                                                                                                                    |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2016  | Carrying out the fifth Multiple Indicator Cluster Survey with NIS                                                                                                                            |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2014  | — The Fourth Cameroonian Household Survey with NIS;                                                                                                                                          |
+|       |                                                                                                                                                                                              |
+|       | — **Master’s topic**: *Import input costs and productivity of manufacturing enterprises in Cameroon, Sub-Regional Institute for Statistics and Applied Economics(Cameroun),*                 |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+# [**LANGUAGES & HOBBIES**]{.underline}
+
+|                                              |
+|----------------------------------------------|
+| **a**. English & French                      |
+| **b**. Research, sport, reading              |
+| **c**. Meeting form Microsft teams in remote |
